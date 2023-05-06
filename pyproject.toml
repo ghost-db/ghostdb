@@ -1,18 +1,16 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 
-[tool.poetry]
-name = "ghostdb"
-version = "0.1.0"
+[project]
+name = "pyghostdb"
+version = "0.0.1"
 description = "GhostDB is a fast, lightweight embedding similarity search database."
-authors = ["fedor.shabashev@gmail.com"]
-license = "MIT"
+authors = [{name="Fedor Shabashev", email="fedor.shabashev@gmail.com"}]
 
-[tool.poetry.dependencies]
-python = "^3.8"
-numpy = "^1.21.0"
-hnswlib = "^0.5.2"
-duckdb = "^0.2.9"
-
-[tool.poetry.dev-dependencies]
-pytest = "^6.2.5"
+dependencies = [
+"python >=3.8",
+"numpy >=1.21.0",
+"hnswlib >=0.5.2",
+"duckdb >=0.2.9",
+"pyarrow>=5.0.0",
+]
