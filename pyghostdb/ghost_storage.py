@@ -1,15 +1,16 @@
+import os
+
 import numpy as np
 
 from pyghostdb.hnswlib_index import HNSWIndex
 from pyghostdb.text_storage import TextStorage
-import os
 
 
 class GhostStorage:
     hnsw_index = None
     text_storage_db = None
 
-    def __init__(self, dim=1024, max_elements=10**5, persist_dir="ghost_dir"):
+    def __init__(self, dim=1024, max_elements=10 ** 5, persist_dir="ghost_dir"):
         self.hnsw_index = HNSWIndex(dim=dim, max_elements=max_elements, ef=200, M=16)
         self.hnsw_index.init_index()
         self.persist_dir = persist_dir
