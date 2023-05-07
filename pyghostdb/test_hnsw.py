@@ -65,4 +65,3 @@ if __name__ == '__main__':
     test_text_storage()
     test_ghostdb()
     test_add_multiple()
-

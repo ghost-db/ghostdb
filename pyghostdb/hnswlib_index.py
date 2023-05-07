@@ -72,7 +72,3 @@ class HNSWIndex:
         Load the index from disk
         """
         self.index.load_index(path)
-
-
-
-

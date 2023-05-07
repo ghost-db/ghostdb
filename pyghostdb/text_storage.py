@@ -65,6 +65,3 @@ class TextStorage:
 
     def remove_db(self):
         os.remove(self.db_path)
-
-
-
