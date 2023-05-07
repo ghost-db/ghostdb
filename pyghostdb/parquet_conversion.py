@@ -1,6 +1,6 @@
+import duckdb
 import pyarrow as pa
 import pyarrow.parquet
-import duckdb
 
 
 def write_to_parquet(text_ids: list[int], texts: list[str], embeddings: list[list[float]], output_file: str):
@@ -47,6 +47,7 @@ def from_parquet_to_duckdb(parquet_file: str, duckdb_file: str, table_name: str)
 
     # Close the connection
     conn.close()
+
 
 # (id_, text, vector_data)
 

@@ -1,7 +1,9 @@
-from hnswlib_index import HNSWIndex
 import numpy as np
-from text_storage import TextStorage
+
 from ghost_storage import GhostStorage
+from hnswlib_index import HNSWIndex
+from text_storage import TextStorage
+
 
 def test_hnsw():
     n_elements = 100
@@ -53,9 +55,12 @@ def test_ghostdb():
 
     print(gs.search(np.array([1, 2, 3]), k=1))
 
+
 def test_add_multiple():
     gs = GhostStorage(dim=3, max_elements=100)
-    gs.add_multiple([1, 2, 3, 4, 5, 6], ['hello world', 'hello world 2', 'hello world 3', 'hello world 4', 'hello world 5', 'hello world 6'], np.random.random((6, 3)))
+    gs.add_multiple([1, 2, 3, 4, 5, 6],
+                    ['hello world', 'hello world 2', 'hello world 3', 'hello world 4', 'hello world 5',
+                     'hello world 6'], np.random.random((6, 3)))
     print(gs.search(np.array([1, 2, 3]), k=1))
 
 

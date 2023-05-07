@@ -1,5 +1,7 @@
-import duckdb
 import os
+
+import duckdb
+
 from pyghostdb.parquet_conversion import write_to_parquet, from_parquet_to_duckdb
 
 
@@ -29,7 +31,6 @@ class TextStorage:
         parquet_filepath = f"{self.db_path}_tmp.parquet"
         write_to_parquet(ids, texts, embeddings, parquet_filepath)
         from_parquet_to_duckdb(parquet_filepath, self.db_path, "vectors")
-
 
     def get(self, id_):
         connection = duckdb.connect(self.db_path)
