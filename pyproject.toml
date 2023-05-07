@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 
 [project]
 name = "pyghostdb"
-version = "0.0.1"
+version = "0.0.5"
 description = "GhostDB is a fast, lightweight embedding similarity search database."
 authors = [{name="Fedor Shabashev", email="fedor.shabashev@gmail.com"}]
 
@@ -13,3 +13,6 @@ dependencies = [
 "duckdb >=0.2.9",
 "pyarrow>=5.0.0",
 ]
+
+[project.urls]
+GitHub = "https://github.com/ghost-db/ghostdb"
