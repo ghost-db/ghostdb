@@ -8,7 +8,6 @@ description = "GhostDB is a fast, lightweight embedding similarity search databa
 authors = [{name="Fedor Shabashev", email="fedor.shabashev@gmail.com"}]
 
 dependencies = [
-"python >=3.8",
 "numpy >=1.21.0",
 "hnswlib >=0.5.2",
 "duckdb >=0.2.9",
