@@ -13,7 +13,7 @@ GhostDB is a Python package that provides a fast and efficient way to store and 
 ## Installation
 
 ```bash
-pip install ghostdb
+pip install pyghostdb
 ```
 
 ## Usage
