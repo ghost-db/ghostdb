@@ -46,20 +46,20 @@ def test_text_storage():
 
 def test_ghostdb():
     gs = GhostStorage(dim=3, max_elements=100)
-    gs.add(1, 'hello world', np.random.random((3, 1)))
-    gs.add(2, 'hello world 2', np.random.random((3, 1)))
-    gs.add(3, 'hello world 3', np.random.random((3, 1)))
-    gs.add(4, 'hello world 4', np.random.random((3, 1)))
-    gs.add(5, 'hello world 5', np.random.random((3, 1)))
-    gs.add(5, 'hello world 6', np.random.random((3, 1)))
+    gs.upsert(1, 'hello world', np.random.random((3, 1)))
+    gs.upsert(2, 'hello world 2', np.random.random((3, 1)))
+    gs.upsert(3, 'hello world 3', np.random.random((3, 1)))
+    gs.upsert(4, 'hello world 4', np.random.random((3, 1)))
+    gs.upsert(5, 'hello world 5', np.random.random((3, 1)))
+    gs.upsert(5, 'hello world 6', np.random.random((3, 1)))
 
     print(gs.search(np.array([1, 2, 3]), k=1))
 
 
 def test_add_multiple():
     gs = GhostStorage(dim=3, max_elements=100)
-    gs.add_multiple([1, 2, 3, 4, 5, 6],
-                    ['hello world', 'hello world 2', 'hello world 3', 'hello world 4', 'hello world 5',
+    gs.upsert_overwrite_bulk([1, 2, 3, 4, 5, 6],
+                             ['hello world', 'hello world 2', 'hello world 3', 'hello world 4', 'hello world 5',
                      'hello world 6'], np.random.random((6, 3)))
     print(gs.search(np.array([1, 2, 3]), k=1))
 

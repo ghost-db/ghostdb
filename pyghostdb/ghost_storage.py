@@ -19,7 +19,7 @@ class GhostStorage:
         if self.hnws_index_filepath_exists():
             self.load()
 
-    def add(self, text_id, text, embedding):
+    def upsert(self, text_id, text, embedding):
         if not isinstance(embedding, np.ndarray):
             try:
                 embedding = np.array(embedding)
@@ -35,7 +35,7 @@ class GhostStorage:
         self.text_storage_db.add(text_id, text, embedding)
         self.hnsw_index.add_items(embedding, [text_id])
 
-    def add_multiple(self, ids: list[int], texts: list[str], embeddings: np.ndarray):
+    def upsert_overwrite_bulk(self, ids: list[int], texts: list[str], embeddings: np.ndarray):
         # convert numpy array to list of floats
         self.hnsw_index.add_items(embeddings, ids)
         embeddings = [list(embedding) for embedding in embeddings]
