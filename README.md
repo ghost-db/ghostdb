@@ -31,7 +31,7 @@ ghost_storage = GhostStorage()
 text_id = 1
 text = "Sample text"
 embedding = np.random.rand(1536)
-ghost_storage.upsert(text_id, text, embedding)
+ghost_storage.add(text_id, text, embedding)
 
 # Search for the nearest neighbor of a query embedding
 query_embedding = np.random.rand(1536)
